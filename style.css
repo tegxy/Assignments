@@ -1,0 +1,287 @@
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+	margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role="list"],
+ol[role="list"] {
+	list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+	scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+	min-height: 100vh;
+	text-rendering: optimizeSpeed;
+	line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+	-webkit-text-decoration-skip: ink;
+	text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+	max-width: 100%;
+	display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+	font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+	html:focus-within {
+		scroll-behavior: auto;
+	}
+	*,
+	*::before,
+	*::after {
+		-webkit-animation-duration: 0.01ms !important;
+		animation-duration: 0.01ms !important;
+		-webkit-animation-iteration-count: 1 !important;
+		animation-iteration-count: 1 !important;
+		transition-duration: 0.01ms !important;
+		scroll-behavior: auto !important;
+	}
+}
+:root {
+	--sedan-color: hsl(31, 77%, 52%);
+	--lux-color: hsl(179, 100%, 13%);
+	--suv-color: hsl(184, 100%, 22%);
+	--paragraph-color: hsla(0, 0%, 100%, 0.75);
+	--background-headings-buttons: hsl(0, 0%, 95%);
+}
+
+.sedan {
+	background-color: var(--sedan-color);
+	border-bottom-left-radius: 10px;
+	border-top-left-radius: 10px;
+}
+.sedan button {
+	color: var(--sedan-color);
+	background-color: var(--background-headings-buttons);
+	border: none;
+	border-radius: 27px;
+	font-size: 0.8em;
+	padding: 0.5em;
+	width: 120px;
+}
+
+.suv {
+	background-color: var(--suv-color);
+}
+.suv button {
+	color: var(--suv-color);
+	background-color: var(--background-headings-buttons);
+	border: none;
+	border-radius: 27px;
+	font-size: 0.8em;
+	padding: 0.5em;
+	width: 120px;
+}
+
+.lux {
+	background-color: var(--lux-color);
+	border-bottom-right-radius: 10px;
+	border-top-right-radius: 10px;
+}
+.lux button {
+	color: var(--lux-color);
+	background-color: var(--background-headings-buttons);
+	border: none;
+	border-radius: 27px;
+	font-size: 0.8em;
+	padding: 0.5em;
+	width: 120px;
+}
+
+/*Mobile screens*/
+@media (max-width: 375px) {
+	.sedan {
+		border-bottom-left-radius: 0;
+		border-top-right-radius: 10px;
+	}
+	.lux {
+		border-top-right-radius: 0;
+		border-bottom-left-radius: 10px;
+	}
+}
+/*Tab screens*/
+@media (min-width: 550px) {
+	.sedan {
+		border-bottom-left-radius: 0;
+		border-top-right-radius: 10px;
+	}
+	.lux {
+		border-top-right-radius: 0;
+		border-bottom-left-radius: 10px;
+	}
+}
+p {
+	text-align: center;
+}
+
+#container {
+	height: 100vh;
+	display: flex;
+	flex-direction: column-reverse;
+	justify-content: center;
+	align-items: center;
+	font-family: "Lexend Deca", sans-serif;
+}
+
+main {
+	display: flex;
+	border-radius: 5px;
+	max-width: 60%;
+	min-height: 60%;
+}
+
+section {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	max-width: 33%;
+	padding: 2em;
+}
+section header {
+	color: var(--background-headings-buttons);
+	font-size: 1.5em;
+	font-family: "Big Shoulders Display", cursive;
+}
+section p {
+	color: var(--paragraph-color);
+	font-size: 0.9em;
+	text-align: left;
+}
+
+.logo {
+	width: 50px;
+}
+
+button:hover {
+	border: var(--background-headings-buttons) solid;
+	cursor: pointer;
+	background-color: transparent;
+	color: var(--paragraph-color);
+}
+
+a {
+	color: var(--sedan-color);
+}
+
+#grid {
+	height: 100vh;
+	display: grid;
+	place-content: center;
+	font-family: "Lexend Deca", sans-serif;
+	background-color: hsl(261deg, 100%, 9%);
+}
+#grid p {
+	text-align: center;
+	color: hsl(0deg, 0%, 100%);
+}
+
+.grid-layout {
+	display: grid;
+	grid-template-columns: repeat(7, 1fr);
+	grid-template-rows: repeat(4, 1fr);
+	grid-gap: 5px;
+	height: 500px;
+	width: 500px;
+}
+
+.red {
+	background-color: red;
+	grid-column: 1/6;
+	grid-row: 1/3;
+}
+
+.orange {
+	background-color: orange;
+	grid-column: 6/8;
+	grid-row: 1/3;
+}
+
+.green {
+	background-color: green;
+	grid-column: 1/4;
+	grid-row: 3/5;
+}
+
+.blue-1 {
+	background-color: blue;
+	grid-column: 4/8;
+	grid-row: 3/4;
+}
+
+.blue-2 {
+	background-color: blue;
+	grid-column: 4/8;
+	grid-row: 4/5;
+}
+
+/*Tab screens*/
+@media (max-width: 550px) {
+	#container {
+		width: 100%;
+		height: 100%;
+	}
+	main {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		height: 65em;
+	}
+	section {
+		max-width: 100%;
+		height: 20em;
+	}
+}
+/*Mobile screens*/
+@media (max-width: 375px) {
+	#container {
+		width: 100%;
+		height: 100%;
+	}
+	main {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		height: 65em;
+	}
+	section {
+		max-width: 100%;
+		height: 20em;
+	}
+} /*# sourceMappingURL=style.css.map */
